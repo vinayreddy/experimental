@@ -1,6 +1,6 @@
 syntax = "proto3";
 package calculator;
-option go_package=".;calculatorpb";
+option go_package="github.com/vinayreddy/experimental/calculatorpb";
 
 import "google/api/annotations.proto";
 
