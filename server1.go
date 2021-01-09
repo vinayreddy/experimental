@@ -33,7 +33,6 @@ func main() {
 		log.Fatalf("Error while listening : %v", err)
 	}
 
-	calculatorpb.RegisterCalculatorServer(s, &server{printerClient: pc})*/
 	s := grpc.NewServer()
 	calculatorpb.RegisterCalculatorServer(s, &server{})
 	if err := s.Serve(lis); err != nil {
