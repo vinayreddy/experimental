@@ -7,13 +7,11 @@ import (
 	"net"
 
 	"github.com/vinayreddy/experimental/calculatorpb"
-	//"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/grpc"
 )
 
-type server struct {
-	printerClient calculatorpb.PrinterClient
-}
+type server struct {}
 
 func (s *server) Add(ctx context.Context, req *calculatorpb.AddRequest) (*calculatorpb.AddResponse, error) {
 	fmt.Println("Got a new Add request")
@@ -21,7 +19,7 @@ func (s *server) Add(ctx context.Context, req *calculatorpb.AddRequest) (*calcul
 	num2 := req.GetNum2()
 	sum := num1 + num2
 	result := &calculatorpb.AddResponse{Result: sum}
-	//log.Printf("Result: %v", protojson.Format(result))
+	log.Printf("Result: %v", protojson.Format(result))
 	return result, nil
 }
 
@@ -34,7 +32,7 @@ func main() {
 	}
 
 	s := grpc.NewServer()
-	//calculatorpb.RegisterCalculatorServer(s, &server{})
+	calculatorpb.RegisterCalculatorServer(s, &server{})
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Error while serving : %v", err)
 	}
