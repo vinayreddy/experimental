@@ -2,8 +2,15 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_binary(
     name = "main.wasm",
-    srcs = ["main.go"],
+    embed = [":wasm_lib"],
     goarch = "wasm",
     goos = "js",
+    visibility = ["//visibility:private"],
+)
+
+go_library(
+    name = "wasm_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/example/project/wasm",
     visibility = ["//visibility:private"],
 )
