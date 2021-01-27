@@ -1,9 +1,7 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
-#load("@rules_proto//:index.bzl", "typescript_proto_library")
-#load("@npm//@bazel//labs:index.bzl", ts_proto_library = "protobufjs_ts_library")
-#load("@npm//protoc-gen-ts:index.bzl", "ts_proto_library")
+load("@npm//@bazel/labs:index.bzl", "ts_proto_library")
 
 proto_library(
     name = "calculatorpb_proto",
@@ -28,7 +26,7 @@ go_library(
     visibility = ["//visibility:public"],
 )
 
-#ts_proto_library(
-#    name = "calculator_js_proto",
-#    deps = [":calculatorpb_proto"],
-#)
+ts_proto_library(
+    name = "calculator_ts_proto",
+    proto = "calculatorpb_proto",
+)

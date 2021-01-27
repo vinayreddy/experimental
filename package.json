@@ -1,0 +1,16 @@
+{
+ "name": "grpc-calculator",
+ "version": "0.1.0",
+ "description": "gRPC-Web Calculator",
+ "devDependencies": {
+  "@bazel/labs": "^3.0.0",
+  "@bazel/typescript": "latest",
+  "@grpc/proto-loader": "^0.3.0",
+  "google-protobuf": "^3.6.1",
+  "grpc": "^1.15.0",
+  "grpc-web": "^1.0.0",
+  "typescript": "^4.0.5",
+  "webpack": "^5.5.0",
+  "webpack-cli": "^4.2.0"
+ }
+}

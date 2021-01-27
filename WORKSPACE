@@ -2,11 +2,11 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "rules_proto",
-    sha256 = "602e7161d9195e50246177e7c55b2f39950a9cf7366f74ed5f22fd45750cd208",
-    strip_prefix = "rules_proto-97d8af4dc474595af3900dd85cb3a29ad28cc313",
+    sha256 = "8e7d59a5b12b233be5652e3d29f42fba01c7cbab09f6b3a8d0a57ed6d1e9a0da",
+    strip_prefix = "rules_proto-7e4afce6fe62dbff0a4a03450143146f9f2d7488",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
-        "https://github.com/bazelbuild/rules_proto/archive/97d8af4dc474595af3900dd85cb3a29ad28cc313.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/7e4afce6fe62dbff0a4a03450143146f9f2d7488.tar.gz",
+        "https://github.com/bazelbuild/rules_proto/archive/7e4afce6fe62dbff0a4a03450143146f9f2d7488.tar.gz",
     ],
 )
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
@@ -66,6 +66,9 @@ gazelle_dependencies(go_sdk = "go_sdk")
 #    strip_prefix = "protobuf-3.11.4",
 #    urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.11.4.zip"],
 #)
+#
+#load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+#protobuf_deps()
 
 go_repository(
     name = "org_golang_x_net",
@@ -81,28 +84,25 @@ go_repository(
     version = "v0.3.0",
 )
 
-#load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-#protobuf_deps()
-
 http_archive(
     name = "build_bazel_rules_nodejs",
     sha256 = "84b1d11b1f3bda68c24d992dc6e830bca9db8fa12276f2ca7fcb7761c893976b",
     urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.0.0-rc.1/rules_nodejs-3.0.0-rc.1.tar.gz"],
 )
 
-#load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "yarn_install")
+load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "yarn_install")
+load("@build_bazel_rules_nodejs//internal/js_library:js_library.bzl", "js_library")
 
-#node_repositories(
-#    package_json = ["//:package.json"],
-#    node_version = "8.11.1",
-#    yarn_version = "1.5.1",
-#)
-#yarn_install(
+node_repositories()
+yarn_install(
     # Name this npm so that Bazel Label references look like @npm//package
-#    name = "npm",
-#    package_json = "//:package.json",
-#    yarn_lock = "//:yarn.lock",
-#    symlink_node_modules = True,  # Expose installed packages for the IDE and the developer. See managed_directories.
-#)
+    name = "npm",
+    package_json = "//:package.json",
+    yarn_lock = "//:yarn.lock",
+    frozen_lockfile = False,
+    symlink_node_modules = True,  # Expose installed packages for the IDE and the developer. See managed_directories.
+)
+load("@npm//@bazel/labs:package.bzl", "npm_bazel_labs_dependencies")
+npm_bazel_labs_dependencies()
 
 go_register_toolchains(version = "1.15.7")
