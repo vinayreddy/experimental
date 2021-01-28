@@ -14,9 +14,9 @@ GOOGLEAPIS_DIR=~/Downloads/googleapis/
 # protoc calculator.proto --proto_path=${GOOGLEAPIS_DIR} --go_opt=paths=source_relative --proto_path=. --go_grpc_opt=require_unimplemented_servers=false,paths=source_relative --go_grpc_out=./calculatorpb --go_out=./calculatorpb
 
 # Create javascript for grpc-web
-protoc calculator.proto --proto_path=${GOOGLEAPIS_DIR} --proto_path=. --js_out=import_style=commonjs,binary:./client --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./client
+# protoc calculator.proto --proto_path=${GOOGLEAPIS_DIR} --proto_path=. --js_out=import_style=commonjs,binary:./client --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./client
 
-cd client
-npm install
-npx webpack --debug client.js
-cd -
+# cd client
+# npm install
+# npx webpack --debug client.js
+# cd -

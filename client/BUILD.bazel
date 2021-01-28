@@ -1,0 +1,15 @@
+load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
+
+rollup_bundle(
+    name = "bundle",
+    config_file = "rollup.config.js",
+    entry_point = "client.js",
+    format = "iife",
+    deps = [
+        "//proto:calculator_ts_proto",
+        "@npm//:node_modules",
+        "@npm//@rollup/plugin-commonjs",
+        "@npm//@rollup/plugin-json",
+        "@npm//@rollup/plugin-node-resolve",
+    ],
+)

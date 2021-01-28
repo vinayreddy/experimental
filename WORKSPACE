@@ -60,16 +60,6 @@ go_repository(
 
 gazelle_dependencies(go_sdk = "go_sdk")
 
-#http_archive(
-#    name = "com_google_protobuf",
-#    sha256 = "9748c0d90e54ea09e5e75fb7fac16edce15d2028d4356f32211cfa3c0e956564",
-#    strip_prefix = "protobuf-3.11.4",
-#    urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.11.4.zip"],
-#)
-#
-#load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-#protobuf_deps()
-
 go_repository(
     name = "org_golang_x_net",
     importpath = "golang.org/x/net",
@@ -86,8 +76,8 @@ go_repository(
 
 http_archive(
     name = "build_bazel_rules_nodejs",
-    sha256 = "84b1d11b1f3bda68c24d992dc6e830bca9db8fa12276f2ca7fcb7761c893976b",
-    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.0.0-rc.1/rules_nodejs-3.0.0-rc.1.tar.gz"],
+    sha256 = "6142e9586162b179fdd570a55e50d1332e7d9c030efd853453438d607569721d",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/releases/download/3.0.0/rules_nodejs-3.0.0.tar.gz"],
 )
 
 load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "yarn_install")

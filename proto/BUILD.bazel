@@ -29,4 +29,5 @@ go_library(
 ts_proto_library(
     name = "calculator_ts_proto",
     proto = "calculatorpb_proto",
+    visibility = ["//client:__pkg__"],
 )
