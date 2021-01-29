@@ -1,5 +1,5 @@
-const { AddRequest, AddResponse } = require("./calculator_pb")
-const { CalculatorClient } = require("./calculator_grpc_web_pb")
+const { AddRequest, AddResponse } = require("proto/calculator_pb")
+const { CalculatorClient } = require("proto/calculator_grpc_web_pb")
 var client = new CalculatorClient('http://localhost:8080');
 
 var request = new AddRequest()

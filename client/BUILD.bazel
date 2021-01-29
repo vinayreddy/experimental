@@ -5,6 +5,7 @@ rollup_bundle(
     config_file = "rollup.config.js",
     entry_point = "client.js",
     format = "iife",
+    link_workspace_root = True,
     deps = [
         "//proto:calculator_ts_proto",
         "@npm//:node_modules",

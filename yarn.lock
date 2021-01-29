@@ -7,12 +7,12 @@
   resolved "https://registry.yarnpkg.com/@bazel/labs/-/labs-3.0.0.tgz#1e7f22acee029aee27b01bef018656ad31c20c35"
   integrity sha512-+3k2GDGvZ4lrP9wuP7Vqnsy1wU1Zlw6Kub0c8hNfuwc9oWxlobIDQx1hXCBjf0UaThnHoAzQDrRc1tviNQqnyg==
 
-"@bazel/rollup@latest":
+"@bazel/rollup@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@bazel/rollup/-/rollup-3.0.0.tgz#6e424966d5ec41f6fcdbfbe25ec88d714f081b06"
   integrity sha512-IEq+zbbzWC1hRsdCD/9UocznDJ5aNXlg+XcChM3+VJaloBCKoqAiGf337T6AkPZs3HuAlEHYMvqsRyEHxEQmtg==
 
-"@bazel/typescript@latest":
+"@bazel/typescript@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-3.0.0.tgz#7cb3bcf405c590228888be78b9e49d1dc298dfea"
   integrity sha512-qYsfyi/+7QOFP9uVAv3gKaqkxo+fIamFrdQ71K85FlJSowxAkwj51pxOPnIWBcMzFVNv1p2ZyfM3ZctKqGye2g==
