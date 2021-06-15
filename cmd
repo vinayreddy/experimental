@@ -7,7 +7,7 @@ if [ "$1" = "clean" ]; then
   rm client/calculator_grpc_web_pb.js client/calculator_pb.js
 fi
 
-GOOGLEAPIS_DIR=~/Downloads/googleapis/
+GOOGLEAPIS_DIR=/Users/vinayreddy/code/googleapis
 
 # Auto-generate golang bindings for protobuf
 # mkdir -p calculatorpb
@@ -20,3 +20,6 @@ GOOGLEAPIS_DIR=~/Downloads/googleapis/
 # npm install
 # npx webpack --debug client.js
 # cd -
+
+protoc --proto_path=${GOOGLEAPIS_DIR} -I. --include_imports --include_source_info \
+--descriptor_set_out=proto.pb proto/calculator.proto

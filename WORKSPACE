@@ -93,8 +93,8 @@ yarn_install(
     frozen_lockfile = False,
     symlink_node_modules = True,  # Expose installed packages for the IDE and the developer. See managed_directories.
 )
-load("@npm//@bazel/labs:package.bzl", "npm_bazel_labs_dependencies")
-npm_bazel_labs_dependencies()
+#load("@npm//@bazel/labs:package.bzl", "npm_bazel_labs_dependencies")
+#npm_bazel_labs_dependencies()
 
 #rules_kotlin_version = "legacy-1.3.0"
 #rules_kotlin_sha = "4fd769fb0db5d3c6240df8a9500515775101964eebdf85a3f9f0511130885fde"

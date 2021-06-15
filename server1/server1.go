@@ -38,7 +38,7 @@ func main() {
 	}
 
 	s := grpc.NewServer()
-	pa := "0.0.0.0:8080"
+	pa := "0.0.0.0:8001"
 	conn, err := grpc.Dial(pa, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Cannot connect to printer service: %v", err)

@@ -16,7 +16,8 @@ message AddResponse {
 service Calculator {
   rpc Add(AddRequest) returns (AddResponse) {
     option (google.api.http) = {
-      get: "/v1/add"
+      post: "/v1/add"
+      body: "*"
     };
   };
 }
@@ -34,4 +35,3 @@ service Printer {
     };
   };
 }
-
